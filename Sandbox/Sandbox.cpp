@@ -42,6 +42,8 @@ TEST_CASE("stlab futures") {
 }
 
 int main(int argc, char** argv) {
+    fmt::print("fmt version is {}\n", FMT_VERSION);
+
     doctest::Context context;
 
     auto res = context.run();

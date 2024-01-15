@@ -9,3 +9,4 @@ WORKDIR ./sandbox-setup-scripts
 ADD ./scripts .
 RUN ./install_cmake.sh
 RUN ./install_clang-format.sh
+RUN ./install_vcpkg.sh

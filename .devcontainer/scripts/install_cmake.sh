@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CMAKE_VERSION=3.25.2
+CMAKE_VERSION=3.28.1
 
 apt-get update && \
-apt-get -y install build-essential && \
+apt-get -y install build-essential pkg-config ninja-build && \
 apt-get install -y wget && \
 rm -rf /var/lib/apt/lists/* && \
 wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-linux-$(uname -m).sh -q -O /tmp/cmake-install.sh && \

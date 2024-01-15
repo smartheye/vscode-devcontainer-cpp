@@ -36,7 +36,7 @@
 	/// Fetch the vcpkg hash specified by `builtin-baseline` in vcpkg.json to enable versioning.
 	/// See https://github.com/microsoft/vscode-remote-release/issues/7628 to motivate the `config` command.
 	/// TODO: Move this into a script file that properly handles `vcpkg.json` without `builtin-baseline`.
-	"onCreateCommand": "git config --global --add safe.directory /usr/local/vcpkg && git --git-dir /usr/local/vcpkg/.git fetch --depth 1 origin `cat vcpkg.json | jq -r .'\"builtin-baseline\"'`",
+	"onCreateCommand": "git config --global user.name 'Andrew Ye HE' && git config --global user.email 'allenofchina@hotmail.com' && git config --global --add safe.directory /usr/local/vcpkg && git --git-dir /usr/local/vcpkg/.git fetch --depth 1 origin `cat vcpkg.json | jq -r .'\"builtin-baseline\"'`",
 	// Comment out this line to run as root instead.
-	"remoteUser": "vscode"
+	"remoteUser": "root"
 }
