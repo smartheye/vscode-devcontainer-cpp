@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CMAKE_VERSION=3.28.1
+CMAKE_VERSION=3.28.4
 
 apt-get update && \
 apt-get -y install build-essential pkg-config ninja-build && \

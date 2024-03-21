@@ -3,10 +3,11 @@
 ARG VARIANT=debian-12
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:1-${VARIANT}
 
-RUN apt-get update && apt-get install -y software-properties-common
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    apt-get -y install --no-install-recommends software-properties-common
 
-WORKDIR ./sandbox-setup-scripts
+WORKDIR /opt/devcontainer-setup
 ADD ./scripts .
 RUN ./install_cmake.sh
 RUN ./install_clang-format.sh
-RUN ./install_vcpkg.sh
+#RUN ./install_vcpkg.sh
