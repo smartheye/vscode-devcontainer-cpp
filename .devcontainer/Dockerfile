@@ -3,8 +3,13 @@
 ARG VARIANT=debian-12
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:1-${VARIANT}
 
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources \
+    && sed -i 's/http:/https:/g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get update
+
 #RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #    && apt-get -y install --no-install-recommends software-properties-common
+RUN apt-get update && apt-get -y install --no-install-recommends software-properties-common
 
 WORKDIR /opt/devcontainer-setup
 ADD ./scripts .
